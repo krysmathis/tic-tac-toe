@@ -27,7 +27,7 @@ const displayTie = function() {
             <button id="play-again">Play Again</button>
         </div>
     `
-
+    document.querySelector(".board").className +=" unclickable";
 }
 
 const displayWinner = function(winner, color) {
