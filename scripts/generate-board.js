@@ -1,7 +1,13 @@
 const generateBoard = function() {
     
     const board = document.querySelector(".board");
+    board.innerHTML = "";
+    
+    // clear the results area
+    document.querySelector(".result").innerHTML = "";
 
+
+    document.querySelector(".result")
     const boxIdGenerator = function*() {
         let currentId = 1;
 
