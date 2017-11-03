@@ -40,6 +40,7 @@ const displayWinner = function(winner, color) {
 
 const resetPlayers = function() {
     console.log("code reset players");
+    playersArray = [[],[]]
 }
 
 const resetGame = function() {
