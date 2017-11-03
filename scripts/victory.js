@@ -1,4 +1,4 @@
-const victoryCheck = array => {
+const victoryCheck = (array, counter) => {
     let playerMoves
     let playerName
     if(counter % 2 === 0){
