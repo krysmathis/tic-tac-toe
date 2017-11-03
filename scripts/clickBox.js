@@ -1,5 +1,5 @@
 {
-    document.getElementById('board').addEventListener("click", clickBox)
+    
 
     const playersArray =[[],[]]
 
@@ -28,9 +28,12 @@
         }
     }
 
+    
     const writeXO = (id, player) => {
         const box = document.getElementById(`box_${id}`)
         box.className += ` ${player.color}`
         box.innerHTML = `${player.player}`
     }
+    
+    document.querySelector('.board').addEventListener("click", clickBox)
 }
