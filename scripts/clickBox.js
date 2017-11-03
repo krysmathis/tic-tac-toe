@@ -15,10 +15,10 @@ const clickBox = event => {
 
         writeXO (boxId, currentPlayer)
 
-        let result = victoryCheck(playersArray, counter)
+        let result = victoryCheck(playersArray[currentPlayer.arrayIndex])
         
         if (result) {
-            displayResult(playersArray)
+            displayResult(currentPlayer, result)
         } else if (counter === 8) {
             displayResult()
         }

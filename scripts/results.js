@@ -3,26 +3,29 @@
 
 
 
-const displayResult = function(winner) {
+const displayResult = function(winner, winningArray) {
      document.querySelector(".result").style.display = "block";
-
+    
     if (!winner) {
         // it's a tie
         displayTie();
         console.log("a tie!")
     }
     else {
-        displayWinner(winner.player, winner.color)
+        //victoryDisplay(winningArray);
+        displayWinner(winner.player, winner.color);
     }
 
 }
 
 const displayTie = function() {
+    
     const area = document.querySelector(".result")
-
     area.innerHTML = `
-        <h1>The Game Ended In A Tie!</h1>
-        <button id="play-again">Play Again</button>
+        <div class="display">
+            <h1>The Game Ended In A Tie!</h1>
+            <button id="play-again">Play Again</button>
+        </div>
     `
 
 }
@@ -31,11 +34,13 @@ const displayWinner = function(winner, color) {
     
     const area = document.querySelector(".result")
     
-        area.innerHTML = `
-            <h1>${winner}  Wins!</h1>
-            <button id="play-again">Play Again</button>
-        `
-        area.style.background = color;
+    area.innerHTML = `
+    <div class="display">
+    <h1>${winner}  Wins!</h1>
+    <button id="play-again">Play Again</button>
+    </div>
+    `
+        document.querySelector(".display").style.background = color;
 }
 
 const resetPlayers = function() {
