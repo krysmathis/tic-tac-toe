@@ -51,7 +51,7 @@ const victoryCheck = array => {
             return playerName
             break;
         default:
-            return "noWin"
+            return null
             break
     }
 
