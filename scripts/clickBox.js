@@ -1,4 +1,4 @@
-let playersArray =[[],[]]
+
 
 const clickBox = event => {
 
