@@ -36,6 +36,19 @@
 
 .board__box {
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7em;
+}
+
+.board__box--winning {
+  border: 1px solid black;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
 }
 
 #box_1 {
