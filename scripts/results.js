@@ -47,13 +47,12 @@ const displayWinner = function(winner, color) {
 }
 
 const resetPlayers = function() {
-    console.log("code reset players");
     playersArray = [[],[]]
 }
 
 const resetGame = function() {
     document.querySelector(".result").style.display = "none";
-    generateBoard();
+    generateBoard(3);
     resetPlayers();
 }
 

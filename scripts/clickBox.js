@@ -19,7 +19,7 @@ const clickBox = event => {
         
         if (result) {
             displayResult(currentPlayer, result)
-        } else if (counter === 8) {
+        } else if (counter === winnerArray.length) {
             displayResult()
         }
     }
