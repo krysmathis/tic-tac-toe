@@ -107,8 +107,12 @@
   background-color: black;
   color: white;
   height: 100px;
+
 }
 
+.unclickable {
+  pointer-events: none;
+}
 
 .result {
   display: none; 
