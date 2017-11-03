@@ -1,6 +1,8 @@
 // function that display result
 //{"player":"X", "arrayIndex": 0, "color": "red"} : {"player":"O", "arrayIndex": 1, "color": "blue"}
 
+
+
 const displayResult = function(winner) {
      document.querySelector(".result").style.display = "block";
 
@@ -10,7 +12,7 @@ const displayResult = function(winner) {
         console.log("a tie!")
     }
     else {
-        // the winner is winner.player -- winner.color
+        displayWinner(winner.player, winner.color)
     }
 
 }
@@ -25,11 +27,16 @@ const displayTie = function() {
 
 }
 
-document.querySelector("body").addEventListener("click", function(event) {
-    if (event.target.id === "play-again") {
-        resetGame();
-    }
-})
+const displayWinner = function(winner, color) {
+    
+    const area = document.querySelector(".result")
+    
+        area.innerHTML = `
+            <h1>${winner}  Wins!</h1>
+            <button id="play-again">Play Again</button>
+        `
+        area.style.background = color;
+}
 
 const resetPlayers = function() {
     console.log("code reset players");
@@ -41,3 +48,11 @@ const resetGame = function() {
     resetPlayers();
 }
 
+document.querySelector("body").addEventListener("click", function(event) {
+    if (event.target.id === "play-again") {
+        resetGame();
+    }
+})
+
+
+displayResult({"player":"X", "arrayIndex": 0, "color": "red"});
