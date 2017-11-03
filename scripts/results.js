@@ -12,7 +12,7 @@ const displayResult = function(winner, winningArray) {
         console.log("a tie!")
     }
     else {
-        //victoryDisplay(winningArray);
+        victoryDisplay(winningArray);
         displayWinner(winner.player, winner.color);
     }
 
@@ -40,7 +40,9 @@ const displayWinner = function(winner, color) {
     <button id="play-again">Play Again</button>
     </div>
     `
-        document.querySelector(".display").style.background = color;
+    document.querySelector(".display").style.background = color;
+    const winning = document.querySelectorAll(".board__box--winning");
+    Array.from(winning).forEach(box => {box.style.background = color});
 }
 
 const resetPlayers = function() {
