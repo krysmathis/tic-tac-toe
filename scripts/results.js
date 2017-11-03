@@ -27,7 +27,7 @@ const displayTie = function() {
             <button id="play-again">Play Again</button>
         </div>
     `
-
+    document.querySelector(".board").className +=" unclickable";
 }
 
 const displayWinner = function(winner, color) {
@@ -43,6 +43,7 @@ const displayWinner = function(winner, color) {
     document.querySelector(".display").style.background = color;
     const winning = document.querySelectorAll(".board__box--winning");
     Array.from(winning).forEach(box => {box.style.background = color});
+    document.querySelector(".board").className +=" unclickable";
 }
 
 const resetPlayers = function() {

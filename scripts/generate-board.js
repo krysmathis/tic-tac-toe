@@ -1,6 +1,7 @@
 const generateBoard = function() {
     
     const board = document.querySelector(".board");
+    board.className ="board";
     board.innerHTML = "";
     
     // clear the results area
