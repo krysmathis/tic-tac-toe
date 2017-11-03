@@ -38,6 +38,6 @@ const buildArray = x => {
         d2 += x-1        
     }
     winnerArray.push(diagonal2)
-    
+    //winnerArray = winnerArray.map(e=> e.toString());
     return winnerArray
 }

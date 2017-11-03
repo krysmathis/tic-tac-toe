@@ -15,7 +15,7 @@ const clickBox = event => {
 
         writeXO (boxId, currentPlayer)
 
-        let result = victoryCheck(playersArray[currentPlayer.arrayIndex])
+        let result = victoryCheck(playersArray[currentPlayer.arrayIndex],boxes)
         
         if (result) {
             displayResult(currentPlayer, result)
