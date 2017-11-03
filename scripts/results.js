@@ -53,6 +53,3 @@ document.querySelector("body").addEventListener("click", function(event) {
         resetGame();
     }
 })
-
-
-displayResult({"player":"X", "arrayIndex": 0, "color": "red"});
