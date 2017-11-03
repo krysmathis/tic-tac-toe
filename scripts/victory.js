@@ -1,58 +1,53 @@
 const victoryCheck = array => {
-    let playerMoves
-    let playerName
-    if(counter % 2 === 0){
-        playerMoves = array[0]
-        playerName = "X"
-    } else {
-        playerMoves = array[1]
-        playerName = "O"
-    }
     
+    let winningArray 
+
     switch(true) {
-        case playerMoves.includes("1") &&
-             playerMoves.includes("2") &&
-             playerMoves.includes("3"):
-            return playerName
+        case array.includes("1") &&
+             array.includes("2") &&
+             array.includes("3"):
+             winningArray= ["1","2","3"]
             break;
-        case playerMoves.includes("4") &&
-             playerMoves.includes("5") &&
-             playerMoves.includes("6"):
-            return playerName
+        case array.includes("4") &&
+             array.includes("5") &&
+             array.includes("6"):
+             winningArray= ["4","5","6"]
             break;
-        case playerMoves.includes("7") &&
-             playerMoves.includes("8") &&
-             playerMoves.includes("9"):
-            return playerName
+        case array.includes("7") &&
+             array.includes("8") &&
+             array.includes("9"):
+             winningArray= ["7","8","9"]
             break;
-        case playerMoves.includes("1") &&
-             playerMoves.includes("4") &&
-             playerMoves.includes("7"):
-            return playerName
+        case array.includes("1") &&
+             array.includes("4") &&
+             array.includes("7"):
+             winningArray= ["1","4","7"]
             break;
-        case playerMoves.includes("2") &&
-             playerMoves.includes("5") &&
-             playerMoves.includes("8"):
-            return playerName
+        case array.includes("2") &&
+             array.includes("5") &&
+             array.includes("8"):
+             winningArray= ["2","5","8"]
             break;
-        case playerMoves.includes("3") &&
-             playerMoves.includes("6") &&
-             playerMoves.includes("9"):
-            return playerName
+        case array.includes("3") &&
+             array.includes("6") &&
+             array.includes("9"):
+             winningArray= ["3","6","9"]
             break;
-        case playerMoves.includes("1") &&
-             playerMoves.includes("5") &&
-             playerMoves.includes("9"):
-            return playerName
+        case array.includes("1") &&
+             array.includes("5") &&
+             array.includes("9"):
+             winningArray= ["1","5","9"]
             break;
-        case playerMoves.includes("3") &&
-             playerMoves.includes("5") &&
-             playerMoves.includes("7"):
-            return playerName
+        case array.includes("3") &&
+             array.includes("5") &&
+             array.includes("7"):
+             winningArray= ["3","5","7"]
             break;
         default:
             return null
             break
-    }
 
+        }
+        
+        return winningArray
 }
