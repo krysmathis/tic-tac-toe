@@ -1,39 +1,35 @@
-{
-    
+let playersArray =[[],[]]
 
-    const playersArray =[[],[]]
+const clickBox = event => {
 
-    const clickBox = event => {
+    const boxId = event.target.id.split('_')[1]
+    const concatedPlayersArray = playersArray[0].concat(playersArray[1])
 
-        const boxId = event.target.id.split('_')[1]
-        const concatedPlayersArray = playersArray[0].concat(playersArray[1])
+    if (concatedPlayersArray.includes(boxId) === false) {
 
-        if (concatedPlayersArray.includes(boxId) === false) {
+        let counter = concatedPlayersArray.length
 
-            let counter = concatedPlayersArray.length
+        let currentPlayer = (counter % 2 === 0 ? {'player':'X', 'arrayIndex': 0, 'color': 'red'} : {'player':'O', 'arrayIndex': 1, 'color': 'blue'})
 
-            let currentPlayer = (counter.length % 2 === 0 ? {'player':'X', 'arrayIndex': 0, 'color': 'red'} : {'player':'O', 'arrayIndex': 1, 'color': 'blue'})
+        playersArray[currentPlayer.arrayIndex].push(boxId)
 
-            playersArray[currentPlayer.arrayIndex].push(boxId)
+        writeXO (boxId, currentPlayer)
 
-            writeXO (boxId, currentPlayer)
-
-            let result = victoryCheck(playersArray)
-            
-            if (result) {
-                displayResult(result)
-            } else if (counter === 8) {
-                displayResult()
-            }
+        let result = victoryCheck(playersArray, counter)
+        
+        if (result) {
+            displayResult(playersArray)
+        } else if (counter === 8) {
+            displayResult()
         }
     }
-
-    
-    const writeXO = (id, player) => {
-        const box = document.getElementById(`box_${id}`)
-        box.className += ` ${player.color}`
-        box.innerHTML = `${player.player}`
-    }
-    
-    document.querySelector('.board').addEventListener("click", clickBox)
 }
+
+
+const writeXO = (id, player) => {
+    const box = document.getElementById(`box_${id}`)
+    box.className += ` ${player.color}`
+    box.innerHTML = `${player.player}`
+}
+
+document.querySelector('.board').addEventListener("click", clickBox)
