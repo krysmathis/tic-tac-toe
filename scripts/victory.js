@@ -2,11 +2,11 @@ const victoryCheck = array => {
     let playerMoves
     let playerName
     if(counter % 2 === 0){
-        playerMoves = array[1]
-        playerName = "O"
-    } else {
         playerMoves = array[0]
         playerName = "X"
+    } else {
+        playerMoves = array[1]
+        playerName = "O"
     }
     
     switch(true) {
@@ -51,7 +51,7 @@ const victoryCheck = array => {
             return playerName
             break;
         default:
-            return "NoWin"
+            return "noWin"
             break
     }
 
