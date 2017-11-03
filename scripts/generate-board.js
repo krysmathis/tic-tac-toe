@@ -34,4 +34,9 @@ const generateBoard = function(rows) {
 
 generateBoard(3);
 
+document.querySelector(".input__btn").addEventListener("click", () => {
+    const rows = document.querySelector(".input__rows").value;
+    generateBoard(rows);
+})
+
 
