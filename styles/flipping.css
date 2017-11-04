@@ -4,6 +4,8 @@
 .flip-container,
 .flip-container-sm {
     perspective: 1000px;
+    color: rgba(255, 0, 0, 0.700);
+    color: rgba(0, 0, 255, 0.700);
 }
 
 

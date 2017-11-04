@@ -9,7 +9,8 @@ const clickBox = event => {
 
         let counter = concatedPlayersArray.length
 
-        let currentPlayer = (counter % 2 === 0 ? {'player':'X', 'arrayIndex': 0, 'color': 'red'} : {'player':'O', 'arrayIndex': 1, 'color': 'blue'})
+        let currentPlayer = (counter % 2 === 0 ? {'player':'X', 'arrayIndex': 0, 'color': 'red', 'colorTransparent': 
+        'rgba(255, 0, 0, 0.800)'} : {'player':'O', 'arrayIndex': 1, 'color': 'blue', 'colorTransparent': 'rgba(0, 0, 255, 0.800)'})
 
         playersArray[currentPlayer.arrayIndex].push(boxId)
 
