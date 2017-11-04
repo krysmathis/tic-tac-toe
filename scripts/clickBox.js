@@ -1,4 +1,4 @@
-let playersArray =[[],[]]
+
 
 const clickBox = event => {
 
@@ -15,11 +15,11 @@ const clickBox = event => {
 
         writeXO (boxId, currentPlayer)
 
-        let result = victoryCheck(playersArray[currentPlayer.arrayIndex])
+        let result = victoryCheck(playersArray[currentPlayer.arrayIndex],boxes)
         
         if (result) {
             displayResult(currentPlayer, result)
-        } else if (counter === 8) {
+        } else if (counter === boxes - 1) {
             displayResult()
         }
     }
