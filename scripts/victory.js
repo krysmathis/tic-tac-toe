@@ -15,7 +15,6 @@ const victoryCheck = (array,boxes) => {
         }
     }
 
-    console.log(winningArray)
     return winningArray
     
 }

@@ -19,7 +19,7 @@ const clickBox = event => {
         
         if (result) {
             displayResult(currentPlayer, result)
-        } else if (counter === winnerArray.length) {
+        } else if (counter === boxes - 1) {
             displayResult()
         }
     }
