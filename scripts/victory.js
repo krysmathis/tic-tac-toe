@@ -1,5 +1,3 @@
-let winnerArray;
-
 const victoryCheck = (array,boxes) => {
     
     let winningArray = null

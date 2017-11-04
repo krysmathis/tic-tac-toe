@@ -1,5 +1,5 @@
 const buildArray = x => {
-    winnerArray = []
+    let winnerArray = []
 
     for (let index = 0; index < x; index++) {
         let counter = x*index+1
