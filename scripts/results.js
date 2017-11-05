@@ -13,7 +13,7 @@ const displayResult = function(winner, winningArray) {
     }
     else {
         victoryDisplay(winningArray);
-        displayWinner(winner.player, winner.color);
+        displayWinner(winner.player, winner.colorTransparent);
     }
 
 }
