@@ -51,8 +51,9 @@ const resetPlayers = function() {
 }
 
 const resetGame = function() {
+    const boardRows = document.querySelector(".input__rows").value;
     document.querySelector(".result").style.display = "none";
-    generateBoard(3);
+    generateBoard(boardRows);
     resetPlayers();
 }
 

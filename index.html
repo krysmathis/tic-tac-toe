@@ -9,8 +9,14 @@
     <main class='main-content'>
       <h1>Div Tac Toe</h1>
       <div class="input">
-        <label>How Many Rows?</label>
-        <input class="input__rows" type="number" value="3" min="1" max="15">
+        <div class="howmanyrows">
+          <label>How Many Rows?</label>
+          <input class="input__rows" type="number" value="3" min="3" max="25">
+        </div>
+        <div class="rowstowin">
+          <label>How Many In a Row To Win?</label>
+          <input class="input__rows-to-win" type="number" value="3" min="3" max="5">
+        </div>
         <button class="input__btn">Go!</button>
       </div>
       <div class="result"></div>
@@ -20,11 +26,12 @@
       </div>
     </main>
     <footer></footer>
-    <script src='./scripts/generate-board.js'></script>
     <script src='./scripts/winningArray.js'></script>
+    <script src='./scripts/generate-board.js'></script>
     <script src='./scripts/victory.js'></script>
     <script src='./scripts/results.js'></script>
     <script src='./scripts/clickBox.js'></script>
     <script src='./scripts/victory-display.js'></script>
+  <script src='./scripts/events.js'></script>
   <script src='./scripts/tic-tac-toe.js'></script>
 </html>

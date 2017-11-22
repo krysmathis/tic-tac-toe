@@ -1,4 +1,7 @@
-
+/**
+ * Generate the winning array of options once and pass it to the 
+ * victoryDisplay function
+ */
 
 const clickBox = event => {
 
@@ -16,7 +19,7 @@ const clickBox = event => {
 
         writeXO (boxId, currentPlayer)
 
-        let result = victoryCheck(playersArray[currentPlayer.arrayIndex],boxes)
+        let result = victoryCheck(playersArray[currentPlayer.arrayIndex],boxes,winnerArray);
         
         if (result) {
             displayResult(currentPlayer, result)

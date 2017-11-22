@@ -1,9 +1,6 @@
-const victoryCheck = (array,boxes) => {
+const victoryCheck = (array,boxes,winnerArray) => {
     
     let winningArray = null
-
-
-    const winnerArray = buildArray(Math.sqrt(boxes));
     
     for (let index = 0; index < winnerArray.length; index++) {
         let element = winnerArray[index]

@@ -1,5 +1,8 @@
 let boxes = 0;
 let playersArray =[[],[]]
+let winnerArray = [];
+let winningRows = 3;
+
 
 const generateBoard = function(rows) {
     
@@ -39,14 +42,34 @@ const generateBoard = function(rows) {
     document.documentElement.style.setProperty("--board-size", boardSize+"px");
     document.documentElement.style.setProperty("--font-size", boardSize-10+"px");
 
+    // get the default parameters and winning combinations
+    winningRows = Math.min(parseInt(document.querySelector(".input__rows-to-win").value),boxes);
+    winnerArray = buildArray(Math.sqrt(boxes),winningRows);
+
 }
 
 generateBoard(3);
 
-document.querySelector(".input__btn").addEventListener("click", () => {
-    const rows = document.querySelector(".input__rows").value;
-    generateBoard(rows);
+function initGameBoard() {
+    const rowsToWin = document.querySelector(".input__rows").value;
+    generateBoard(rowsToWin);
     playersArray =[[],[]];
+    winningRows = Math.min(parseInt(document.querySelector(".input__rows-to-win").value),boxes);
+    winnerArray = buildArray(Math.sqrt(boxes),winningRows);
+}
+
+document.querySelector(".input__btn").addEventListener("click", () => {
+    initGameBoard();
+})
+
+document.querySelector(".input__rows").addEventListener("change",e=>{
+    document.querySelector(".input__rows-to-win").setAttribute("max",e.target.value);
+    initGameBoard();
+})
+
+document.querySelector(".input__rows-to-win").addEventListener("change",e=>{
+    initGameBoard();
+
 })
 
 
