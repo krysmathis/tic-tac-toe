@@ -31,6 +31,14 @@ const generateBoard = function(rows) {
 
     //--board-boxes: 4;
     document.documentElement.style.setProperty("--board-boxes", rows);
+    //--board-boxes: 4;
+    let windowSize = Math.min(window.innerWidth/1.5,window.innerHeight/1.5);
+
+    let boardSize = windowSize/rows;
+    let fontSize = 360/rows;
+    document.documentElement.style.setProperty("--board-size", boardSize+"px");
+    document.documentElement.style.setProperty("--font-size", boardSize-10+"px");
+
 }
 
 generateBoard(3);
