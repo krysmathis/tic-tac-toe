@@ -42,13 +42,14 @@ const generateBoard = function(rows) {
     document.documentElement.style.setProperty("--board-size", boardSize+"px");
     document.documentElement.style.setProperty("--font-size", boardSize-10+"px");
 
-    // get the default parameters and winning combinations
-    winningRows = Math.min(parseInt(document.querySelector(".input__rows-to-win").value),boxes);
-    winnerArray = buildArray(Math.sqrt(boxes),winningRows);
+
 
 }
 
 generateBoard(3);
+// get the default parameters and winning combinations
+winningRows = Math.min(parseInt(document.querySelector(".input__rows-to-win").value),boxes);
+winnerArray = buildArray(Math.sqrt(boxes),winningRows);
 
 function initGameBoard() {
     const rowsToWin = document.querySelector(".input__rows").value;
