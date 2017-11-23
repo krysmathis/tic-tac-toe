@@ -46,10 +46,7 @@ const generateBoard = function(rows) {
 
 }
 
-generateBoard(3);
-// get the default parameters and winning combinations
-winningRows = Math.min(parseInt(document.querySelector(".input__rows-to-win").value),boxes);
-winnerArray = buildArray(Math.sqrt(boxes),winningRows);
+initGameBoard();
 
 function initGameBoard() {
     const rowsToWin = document.querySelector(".input__rows").value;
