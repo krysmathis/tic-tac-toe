@@ -2,6 +2,7 @@ const buildArray = (x,winningRows) => {
     let builderArray = []
     let matrix = x * x
 
+    // combinations going across
     for (let index = 0; index < x; index++) {
         let counter = x * index + 1
         let winningArray = []
@@ -13,6 +14,7 @@ const buildArray = (x,winningRows) => {
         builderArray.push(winningArray)
     }
 
+    // combinations going down
     for (let index = 0; index < x; index++) {
         let counter = index + 1
         let winningArray = []
@@ -26,7 +28,8 @@ const buildArray = (x,winningRows) => {
 
     // you'll do 2 loops through this first through
     // the top row and then down the side rows
-
+    
+    // diagonals going downward and to the right
     for (let i = 0; i < x; i++) {
         let diagonal1 = []
         let d1 = 1 + i
@@ -37,6 +40,7 @@ const buildArray = (x,winningRows) => {
             builderArray.push(diagonal1)
     }
 
+    // diagonals going downward and to the left
     for (let i = 0; i < x; i++){
         let diagonal2 = []
         let d2 = x - i
@@ -47,7 +51,7 @@ const buildArray = (x,winningRows) => {
         builderArray.push(diagonal2)
     }
 
-    const leftColumnMax = 1 + (x*(x-1))
+    // go down the left column and collect diagonals
     // start i at 2 because you've already captured it
     for (let i = 1; i < x; i++){
         let diagonal3 = []
@@ -61,7 +65,7 @@ const buildArray = (x,winningRows) => {
         }
     }
 
-    const rightColumnMax = x*x
+    // go down the right column and collect diagonals
     let pass = 0;
     for (let i = 1; i < x; i++){
         let diagonal4 = []
@@ -77,13 +81,13 @@ const buildArray = (x,winningRows) => {
     }
 
     let finalWinners = []
-    // now generate all the 3 size arrays and add them to the mix
+    // now generate all the correctly sized arrays and add them to the miniWins
+    // then filter the mini wins to retrieve the finalWinners
+    // finalWinners appeared necessary because I was getting arrays
+    // of the right length but with an empty value inside.
     const miniWins = [];
     if (x > winningRows) {
         builderArray.forEach(a => {
-            // if (a[0] === 21) {
-            //     debugger
-            // }
             const windowSize = x - winningRows
             // if it's already the right length go ahead and add it
             if (a.length === winningRows){
